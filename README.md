@@ -28,3 +28,6 @@ These branches as as follows.
 
 - constrained_composite_primary_key: changes the composite primary key so that it's constrained.
   Works successfully, although the data types differ from he above example.
+
+- introduce_text_fields: converts the composite primary keys to text fields.
+  Works successfully and is identical to the above field structure.

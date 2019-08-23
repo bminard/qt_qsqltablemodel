@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     }
     
     QSqlQuery q(db);
-    if(!q.exec("create table if not exists \"rast123\" (id integer not null, num integer not null, primary key(id, num)) ;")) {
+    if(!q.exec("create table if not exists \"rast123\" (id text not null, num text not null, primary key(id, num)) ;")) {
         qDebug() << "Create table" << q.lastError().text();
         return 0;
     }
@@ -36,24 +36,24 @@ int main(int argc, char *argv[])
     }
     
     /* id */
-    model.setData(model.index(rowCount + 0,0), rowCount +0);
-    model.setData(model.index(rowCount + 1,0), rowCount +1);
-    model.setData(model.index(rowCount + 2,0), rowCount +2);
-    model.setData(model.index(rowCount + 3,0), rowCount +3);
+    model.setData(model.index(rowCount + 0,0), "0");
+    model.setData(model.index(rowCount + 1,0), "1");
+    model.setData(model.index(rowCount + 2,0), "2");
+    model.setData(model.index(rowCount + 3,0), "3");
 
     /* num */
-    model.setData(model.index(rowCount + 0,1), rowCount +0);
-    model.setData(model.index(rowCount + 1,1), rowCount +1);
-    model.setData(model.index(rowCount + 2,1), rowCount +2);
-    model.setData(model.index(rowCount + 3,1), rowCount +3);
+    model.setData(model.index(rowCount + 0,1), "0");
+    model.setData(model.index(rowCount + 1,1), "1");
+    model.setData(model.index(rowCount + 2,1), "2");
+    model.setData(model.index(rowCount + 3,1), "3");
     
     rowCount = model.rowCount();
     if(!model.insertRow(rowCount)) {
         qDebug() << "insertRow" << model.lastError().text();
         return 0;
     }
-    model.setData(model.index(rowCount,0), rowCount);
-    model.setData(model.index(rowCount,1), rowCount);
+    model.setData(model.index(rowCount,0), "4");
+    model.setData(model.index(rowCount,1), "4");
     
     if(model.submitAll()) {
         model.database().commit();
