@@ -1,4 +1,3 @@
-#include <QCoreApplication>
 #include <QSqlDatabase>
 #include <QSqlTableModel>
 #include <QSqlQuery>
@@ -8,8 +7,6 @@
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
-    
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("rast123.sqlite");
     
@@ -60,5 +57,5 @@ int main(int argc, char *argv[])
     
     }
     
-    return a.exec();
+    return 0;
 }
