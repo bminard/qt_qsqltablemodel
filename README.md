@@ -21,3 +21,7 @@ This permits a simple diff between the master branch and the changed branch to d
 These branches as as follows.
 
 - master: is functionally equivalent to the example downloaded from the Qt Forum.
+  Work successfully, although original example hung on when when QCoreApplication code was present.
+
+- without_row_i: changes the table from an [SQLite rowid table](https://www.sqlite.org/rowidtable.html) to a table.
+  This patch convets the table to a SQLite table and introduces a single primary key on the id column.
