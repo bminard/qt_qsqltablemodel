@@ -25,3 +25,6 @@ These branches as as follows.
 
 - composite_primary_key: changes the table structure to include a composite primary key.
   Works successfully, although there are no constraints on the primary key values.
+
+- constrained_composite_primary_key: changes the composite primary key so that it's constrained.
+  Works successfully, although the data types differ from he above example.

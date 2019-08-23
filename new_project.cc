@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     }
     
     QSqlQuery q(db);
-    if(!q.exec("create table if not exists \"rast123\" (id integer, num integer, primary key(id, num)) ;")) {
+    if(!q.exec("create table if not exists \"rast123\" (id integer not null, num integer not null, primary key(id, num)) ;")) {
         qDebug() << "Create table" << q.lastError().text();
         return 0;
     }
