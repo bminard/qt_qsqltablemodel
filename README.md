@@ -21,3 +21,4 @@ This permits a simple diff between the master branch and the changed branch to d
 These branches as as follows.
 
 - master: is functionally equivalent to the example downloaded from the Qt Forum.
+  Work successfully, although original example hung on when when QCoreApplication code was present.
