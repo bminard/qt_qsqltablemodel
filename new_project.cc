@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     }
     
     QSqlQuery q(db);
-    if(!q.exec("create table if not exists \"rast123\" (id integer) ;")) {
+    if(!q.exec("create table if not exists \"rast123\" (id integer, num integer, primary key(id, num)) ;")) {
         qDebug() << "Create table" << q.lastError().text();
         return 0;
     }
@@ -35,10 +35,17 @@ int main(int argc, char *argv[])
         return 0;
     }
     
+    /* id */
     model.setData(model.index(rowCount + 0,0), rowCount +0);
     model.setData(model.index(rowCount + 1,0), rowCount +1);
     model.setData(model.index(rowCount + 2,0), rowCount +2);
     model.setData(model.index(rowCount + 3,0), rowCount +3);
+
+    /* num */
+    model.setData(model.index(rowCount + 0,1), rowCount +0);
+    model.setData(model.index(rowCount + 1,1), rowCount +1);
+    model.setData(model.index(rowCount + 2,1), rowCount +2);
+    model.setData(model.index(rowCount + 3,1), rowCount +3);
     
     rowCount = model.rowCount();
     if(!model.insertRow(rowCount)) {
@@ -46,6 +53,7 @@ int main(int argc, char *argv[])
         return 0;
     }
     model.setData(model.index(rowCount,0), rowCount);
+    model.setData(model.index(rowCount,1), rowCount);
     
     if(model.submitAll()) {
         model.database().commit();

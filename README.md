@@ -22,3 +22,6 @@ These branches as as follows.
 
 - master: is functionally equivalent to the example downloaded from the Qt Forum.
   Work successfully, although original example hung on when when QCoreApplication code was present.
+
+- composite_primary_key: changes the table structure to include a composite primary key.
+  Works successfully, although there are no constraints on the primary key values.
