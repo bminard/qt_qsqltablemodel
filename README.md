@@ -22,3 +22,24 @@ These branches as as follows.
 
 - master: is functionally equivalent to the example downloaded from the Qt Forum.
   Work successfully, although original example hung on when when QCoreApplication code was present.
+
+Branches
+---
+
+```
+* fb8951a -  Converted composite primary key types to text (origin/introduce_text_fields, introduce_text_fields)
+* 205492f -  Introduced constraints on composite primary key (origin/constrained_composite_primary_key, constrained_composite_primary_key)
+* c2f67c0 -  Introduced an unconstrained composite primary key (origin/composite_primary_key, composite_primary_key)
+* 184f5ed -  Removed QCoreApplication (HEAD -> master, origin/master)
+| * d731611 -  Converted ROWID table to a table (origin/without_row_id, without_row_id)
+| * 5dcc914 -  Removed QCoreApplication 
+|/  
+* ec024b1 -  White space change 
+* 3bd46af -  Download of original source code 
+* 2fe4f3e -  Initial commit - Brian Minard
+```
+
+Conclusion
+---
+
+The table structure is not the problem.
